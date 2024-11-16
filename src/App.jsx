@@ -1,7 +1,62 @@
+// DescribingTheUI/ImportingAndExportingComponents
+
+// Both default and named imports
+import { Profile } from "./LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery";
+import Gallery from './LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery'
+
+export default function App(){
+  return(
+    <>
+      <Gallery/>
+      
+      <Profile/>
+      <Profile/>
+      <Profile/>
+      <Profile/>
+      <Profile/>
+    </>
+  )
+}
+
+
+// Named Import
+/*
+import { Profile } from "./LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery";
+
+export default function App(){
+  return(
+    <>
+      <Profile/>
+      <Profile/>
+      <Profile/>
+    </>
+  )
+}
+*/
+
+
+
+// Default Import
+/*
+import Gallery from './LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery'
+
+
+export default function App() {
+  return(
+    <Gallery/>
+  )
+}
+*/
+
+
+
+// DescribingTheUI/YourFirstComponent
+/*
+
+
 import './App.css'
 import Gallery from './LearnReact/DescribingTheUI/YourFirstComponent/Gallery'
 
-// DescribingTheUI/YourFirstComponent
 
 // function Profile(){
 //   return (
@@ -33,3 +88,5 @@ function App() {
 }
 
 export default App
+
+*/
