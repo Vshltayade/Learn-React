@@ -1,6 +1,20 @@
+// DescribingTheUI/WritingMarkupWithJSX
+
+import TodoList from "./LearnReact/DescribingTheUI/WritingMarkupWithJSX/TodoList";
+
+export default function App(){
+  return(
+    <>
+      <TodoList/>
+    </>
+  )
+}
+
+
 // DescribingTheUI/ImportingAndExportingComponents
 
 // Both default and named imports
+/*
 import { Profile } from "./LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery";
 import Gallery from './LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery'
 
@@ -17,7 +31,7 @@ export default function App(){
     </>
   )
 }
-
+*/
 
 // Named Import
 /*
@@ -34,8 +48,6 @@ export default function App(){
 }
 */
 
-
-
 // Default Import
 /*
 import Gallery from './LearnReact/DescribingTheUI/ImportingAndExportingComponents/Gallery'
@@ -51,6 +63,7 @@ export default function App() {
 
 
 // DescribingTheUI/YourFirstComponent
+// First Component
 /*
 
 
