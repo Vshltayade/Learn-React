@@ -1,5 +1,20 @@
+// DescribingTheUI/JavaScriptInJSXWithCurlyBraces
+
+import JavascriptInJSX from "./LearnReact/DescribingTheUI/JavaScriptInJSXWithCurlyBraces/JavascriptInJSX";
+
+export default function App(){
+  return(
+    <JavascriptInJSX/>
+  )
+}
+
+
+
+
 // DescribingTheUI/WritingMarkupWithJSX
 
+// Markup With JSX
+/*
 import TodoList from "./LearnReact/DescribingTheUI/WritingMarkupWithJSX/TodoList";
 
 export default function App(){
@@ -9,6 +24,10 @@ export default function App(){
     </>
   )
 }
+*/
+
+
+
 
 
 // DescribingTheUI/ImportingAndExportingComponents
@@ -59,6 +78,8 @@ export default function App() {
   )
 }
 */
+
+
 
 
 
