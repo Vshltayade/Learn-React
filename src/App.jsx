@@ -1,5 +1,50 @@
-// DescribingTheUI/JavaScriptInJSXWithCurlyBraces
+// DescribingTheUI/PassingPropsToAComponent
 
+/*
+import Avatar from "./LearnReact/DescribingTheUI/PassingPropsToAComponent/Avatar"
+import Profile from "./LearnReact/DescribingTheUI/PassingPropsToAComponent/Profile"
+*/
+
+// passing props and reading props
+/*
+export default function App(){
+  return(
+    <Profile/>
+  )
+}
+  */
+
+// parent component - JSX as children
+/*
+// eslint-disable-next-line react/prop-types
+function Card({ children }){
+  return(
+    <div className="card">
+      {children}
+    </div>
+  )
+}
+
+
+export default function App(){
+  return(
+    <Card>
+      <Avatar 
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  )
+}
+*/
+
+
+
+// DescribingTheUI/JavaScriptInJSXWithCurlyBraces
+/*
 import JavascriptInJSX from "./LearnReact/DescribingTheUI/JavaScriptInJSXWithCurlyBraces/JavascriptInJSX";
 
 export default function App(){
@@ -7,7 +52,7 @@ export default function App(){
     <JavascriptInJSX/>
   )
 }
-
+*/
 
 
 
