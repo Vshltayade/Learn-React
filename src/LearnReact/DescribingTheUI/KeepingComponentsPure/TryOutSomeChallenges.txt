@@ -1,0 +1,220 @@
+Challenge 1 of 3: Fix a broken clock
+
+  This component tries to set the <h1>’s CSS class to "night" during the time from midnight to six hours in the morning, and "day" at all other times. However, it doesn’t work. Can you fix this component?
+
+  You can verify whether your solution works by temporarily changing the computer’s timezone. When the current time is between midnight and six in the morning, the clock should have inverted colors!
+
+export default function Clock({ time }) {
+  let hours = time.getHours();
+  if (hours >= 0 && hours <= 6) {
+    document.getElementById('time').className = 'night';
+  } else {
+    document.getElementById('time').className = 'day';
+  }
+  return (
+    <h1 id="time">
+      {time.toLocaleTimeString()}
+    </h1>
+  );
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+
+export default function Clock({ time }) {
+  let hours = time.getHours();
+  return (
+    <h1 id="time" className={hours >= 0 && hours <= 6 ? "night" : "day"}>
+      {time.toLocaleTimeString()}
+    </h1>
+  );
+}
+
+OR
+
+export default function Clock({ time }) {
+  let hours = time.getHours();
+  let className;
+  if (hours >= 0 && hours <= 6) {
+    className = 'night';
+  } else {
+    className = 'day';
+  }
+  return (
+    <h1 className={className}>
+      {time.toLocaleTimeString()}
+    </h1>
+  );
+}
+
+
+
+
+
+
+
+Challenge 2 of 3: Fix a broken profile
+
+  Two Profile components are rendered side by side with different data. Press “Collapse” on the first profile, and then “Expand” it. You’ll notice that both profiles now show the same person. This is a bug.
+
+
+>Profile.js
+
+import Panel from './Panel.js';
+import { getImageUrl } from './utils.js';
+
+let currentPerson;
+
+export default function Profile({ person }) {
+  currentPerson = person;
+  return (
+    <Panel>
+      <Header />
+      <Avatar />
+    </Panel>
+  )
+}
+
+function Header() {
+  return <h1>{currentPerson.name}</h1>;
+}
+
+function Avatar() {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(currentPerson)}
+      alt={currentPerson.name}
+      width={50}
+      height={50}
+    />
+  );
+}
+
+>App.js
+
+import Profile from './Profile.js';
+
+export default function App() {
+  return (
+    <>
+      <Profile person={{
+        imageId: 'lrWQx8l',
+        name: 'Subrahmanyan Chandrasekhar',
+      }} />
+      <Profile person={{
+        imageId: 'MK3eW3A',
+        name: 'Creola Katherine Johnson',
+      }} />
+    </>
+  )
+}
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+import Panel from './Panel.js';
+import { getImageUrl } from './utils.js';
+
+export default function Profile({ person }) {
+  return (
+    <Panel>
+      <Header currentPerson={person}/>
+      <Avatar currentPerson={person}/>
+    </Panel>
+  )
+}
+
+function Header({currentPerson}) {
+  return <h1>{currentPerson.name}</h1>;
+}
+
+function Avatar({currentPerson}) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(currentPerson)}
+      alt={currentPerson.name}
+      width={50}
+      height={50}
+    />
+  );
+}
+
+
+
+
+
+
+
+
+
+Challenge 3 of 3: Fix a broken story tray
+
+    The CEO of your company is asking you to add “stories” to your online clock app, and you can’t say no. You’ve written a StoryTray component that accepts a list of stories, followed by a “Create Story” placeholder.
+
+    You implemented the “Create Story” placeholder by pushing one more fake story at the end of the stories array that you receive as a prop. But for some reason, “Create Story” appears more than once. Fix the issue.
+
+export default function StoryTray({ stories }) {
+  stories.push({
+    id: 'create',
+    label: 'Create Story'
+  });
+
+  return (
+    <ul>
+      {stories.map(story => (
+        <li key={story.id}>
+          {story.label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+export default function StoryTray({ stories }) {
+  return (
+    <ul>
+      {stories.map(story => (
+        <li key={story.id}>
+          {story.label}
+        </li>
+      ))}
+      <li>Create Story</li>
+    </ul>
+  );
+}
+
+
+OR
+
+
+export default function StoryTray({ stories }) {
+  // Copy the array!
+  let storiesToDisplay = stories.slice();
+
+  // Does not affect the original array:
+  storiesToDisplay.push({
+    id: 'create',
+    label: 'Create Story'
+  });
+
+  return (
+    <ul>
+      {storiesToDisplay.map(story => (
+        <li key={story.id}>
+          {story.label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+
+
