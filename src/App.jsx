@@ -1,5 +1,29 @@
-// DescribingTheUI/RenderingLists
+// DescribingTheUI/KeepingComponentsPure
+/*
+import Drink from "./LearnReact/DescribingTheUI/KeepingComponentsPure/Recipe";
+import TeaGathering from "./LearnReact/DescribingTheUI/KeepingComponentsPure/TeaGathering";
+import TeaSet from "./LearnReact/DescribingTheUI/KeepingComponentsPure/TeaSet";
+import TeaSet2 from "./LearnReact/DescribingTheUI/KeepingComponentsPure/TeaSet2";
 
+export default function App(){
+  return(
+    <>
+      <Drink/>
+      <h1>Teaset</h1>
+      <TeaSet/>
+      <h1>Teaset2</h1>
+      <TeaSet2/>
+      <h1>TeaGathering</h1>
+      <TeaGathering/>
+    </>
+  )
+}
+*/
+
+
+
+// DescribingTheUI/RenderingLists
+/*
 import List from "./LearnReact/DescribingTheUI/RenderingLists/List";
 
 export default function App(){
@@ -7,7 +31,7 @@ export default function App(){
     <List/>
   )
 }
-
+*/
 
 
 
